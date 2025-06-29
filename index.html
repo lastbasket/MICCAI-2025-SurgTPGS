@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Endo-4DGX: Robust Endoscopic Scene Reconstruction and Illumination Correction with Gaussian Splatting.">
+  <!-- <meta name="keywords" content="Nerfies, D-NeRF, NeRF"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SurgTPGS: Semantic 3D Surgical Scene Understanding with Text Promptable Gaussian Splatting.</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">SurgTPGS: Semantic 3D Surgical Scene Understanding with Text Promptable Gaussian Splatting.</h1>
+          <br>
+          <div class="column is-full_width">
+            <h2 class="title is-4">MICCAI 2025</h2>
+          </div>
+          <br>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://github.com/lastbasket">Yiming Huang</a><sup>1,2*</sup>,</span>
+            <span class="author-block">
+              <a href="https://longbai-cuhk.github.io/">Long Bai</a><sup>1,2,3*</sup>,</span>
+            <span class="author-block">
+              <a href="https://beileicui.github.io/">Beilei Cui</a><sup>1,2*</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://flaick.github.io/">Kun Yuan</a><sup>3,4*</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://gkwang-cuhk.github.io/">Guankun Wang</a><sup>1,2</sup>,
+            </span>
+            <br>
+            <span class="author-block">
+              <a href="https://mobarakol.github.io/">Mobarak I. Hoque</a><sup>5</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://camma.unistra.fr/npadoy/">Nicolas Padoy</a><sup>4</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.professoren.tum.de/en/navab-nassir">Nassir Navab</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.ee.cuhk.edu.hk/ren/">Hongliang Ren</a><sup>1,2 &dagger;</sup>
+            </span>
+          </div>
+          <br>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>The Chinese University of Hong Kong, Hong Kong SAR, China,</span>
+            <span class="author-block"><sup>2</sup>Shenzhen Research Institute, CUHK, Shenzhen, China,</span>
+            <br>
+            <span class="author-block"><sup>3</sup>Technical University of Munich, Munich, Germany,</span>
+            <span class="author-block"><sup>4</sup>University of Strasbourg & IHU Strasbourg, Strasbourg, France,</span>
+            <span class="author-block"><sup>5</sup>University College London, London, United Kingdom</span>
+          </div>
+
+          <div class="is-size-6 publication-authors">
+            <sup>*</sup> Equal Contribution, <sup>&dagger;</sup> Corresponding Authors
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/lastbasket/SurgTPGS"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container is-centered has-text-centered">
+  <iframe width="960" height="540" src="./static/images/MICCAI_2025_TPGS_Supplement.mp4"  
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  referrerpolicy="strict-origin-when-cross-origin" 
+  allowfullscreen>
+  </iframe>
+  
+</div>
+<br>
+<br>
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+
+    <img src="./static/images/fig1-1.png"
+    width="1000"
+    height="800">
+
+  </div>
+
+  <br>
+
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- <image id="teaser" autoplay muted loop playsinline height="100%"> -->
+      <!-- </image> -->
+      <h2 class="subtitle">
+        <b>Endo-4DGX</b>  achieves state-of-the-art performance for robust reconstruction
+            and illumination correction in the surgical scene with varying illumination.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="container is-centered has-text-centered">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            In contemporary surgical research and practice, accurately comprehending 
+            3D surgical scenes with text-promptable capabilities is particularly crucial 
+            for surgical planning and real-time intra-operative guidance, where precisely 
+            identifying and interacting with surgical tools and anatomical structures is 
+            paramount. However, existing works focus on surgical vision-language model (VLM), 
+            3D reconstruction, and segmentation separately, lacking support for real-time 
+            text-promptable 3D queries. In this paper, we present SurgTPGS, a novel text-
+            promptable Gaussian Splatting method to fill this gap. We introduce a 3D semantics 
+            feature learning strategy incorporating the Segment Anything model and state-of-the-art 
+            vision-language models. We extract the segmented language features for 3D surgical 
+            scene reconstruction, enabling a more in-depth understanding of the complex surgical 
+            environment. We also propose semantic-aware deformation tracking to capture the seamless 
+            deformation of semantic features, providing a more precise reconstruction for both 
+            texture and semantic features. Furthermore, we present semantic region-aware 
+            optimization, which utilizes regional-based semantic information to supervise 
+            the training, particularly promoting the reconstruction quality and semantic 
+            smoothness. We conduct comprehensive experiments on two real-world surgical 
+            datasets to demonstrate the superiority of SurgTPGS over state-of-the-art methods, 
+            highlighting its potential to revolutionize surgical practices.
+          </p>
+        </div>
+      </div>
+    </div>
+</section>
+
+<hr>
+
+<section class="section">
+    <!-- Paper video. -->
+    <div class="container is-centered has-text-centered">
+        <h2 class="title is-3">Architecture</h2>
+        <img src="./static/images/fig2_1-1.png"
+        width="1000"
+        height="800">
+    </div>
+
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <!-- <image id="teaser" autoplay muted loop playsinline height="100%"> -->
+        <!-- </image> -->
+        <h2 class="subtitle">
+            <b>Illustration of the proposed SurgTPGS.</b> We first extract semantic embedding from SAM
+              and VLM; then, we train the deformable Gaussians with semantic-aware deforma-
+              tion tracking and semantic-region-aware optimization. SurgTPGS supports real-time
+              semantic 3D query and novel-view rendering simultaneously.
+
+          </h2>
+        </div>
+      </div>
+</section>
+
+<hr>
+
+<section class="section">
+
+    <!-- Animation. -->
+    <div class="container is-centered  has-text-centered">
+        <h2 class="title is-3">Visualization</h2>
+
+        <!-- Interpolating. -->
+        <h3 class="title is-4">Text-Prompt 3D Segmentation</h3>
+
+          <img src="./static/images/fig3-1.png"
+          width="1200"
+          height="1000">
+      
+    </div>
+      
+        <br>
+      
+        <div class="container is-max-desktop">
+          <div class="hero-body">
+            <!-- <image id="teaser" autoplay muted loop playsinline height="100%"> -->
+            <!-- </image> -->
+            <h2 class="subtitle">
+              <b>Qualitative Result on CholecSeg8K and EndoVis18 Dataset.</b> Our method
+                outperforms state-of-the-art baseline methods.
+            </h2>
+          </div>
+        </div>
+    <!--/ Animation. -->
+
+</section>
+
+<hr>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="container is-centered  has-text-centered">
+        <!--/ Re-rendering. -->
+        <h3 class="title is-3">Result on CholecSeg8K.</h3>
+        <div class="container is-max-desktop">
+
+          <img src="./static/images/result1.png"
+          width="1200"
+          height="1200">
+      
+        </div>
+    </div>
+      
+    <br>
+
+    <div class="container is-centered  has-text-centered">
+        <!--/ Re-rendering. -->
+        <h3 class="title is-3">Result on EndoVis2018</h3>
+        <div class="container is-max-desktop">
+
+          <img src="./static/images/result2.png"
+          width="1200"
+          height="1200">
+      
+        </div>
+    </div>
+      
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+    </code></pre>
+  </div>
+</section>
+
+ 
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Acknowledgement</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            We sincerely thank <a 
+            href="https://youmi-zym.github.io/projects/CompletionFormer/"> CompletionfFormer</a>
+            for their opensource code. We also thanks <a href="https://arxiv.org/abs/2303.14840"> 
+              HAMMER </a>  for the opensource dataset.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>     -->
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+            This webpage template is from <a
+              href="https://github.com/nerfies/nerfies.github.io"> Nerfies.</a> 
+              We sincerely thank <a href="https://keunhong.com/">Keunhong Park
+              </a> for developing and open-sourcing this template.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
